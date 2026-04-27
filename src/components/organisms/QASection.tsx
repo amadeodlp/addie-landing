@@ -39,7 +39,7 @@ const QA_ITEMS: QAItem[] = [
   },
   {
     q: 'Is it really free?',
-    a: 'Yes — free to download, free to use, open source. No trial, no paywall, no account. If it makes your sessions better and you want to support development, there\'s a GitHub Sponsors link. But you never have to.',
+    a: 'Yes — free to download, free to use, open source. No trial, no paywall, no account. If it makes your sessions better, support development through GitHub Sponsors — it makes a real difference.',
   },
   {
     q: 'What do I need to use it?',

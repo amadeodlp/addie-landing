@@ -20,14 +20,14 @@ export const PricingSection = () => {
           <div>
             <MonoLabel color="smoke" className="mb-4 block">Open source</MonoLabel>
             <h2 className="font-sans font-extrabold text-display-lg text-paper leading-tight mb-6">
-              Free. Forever.<br />
-              <span className="text-smoke">No strings.</span>
+              Free to use.<br />
+              <span className="text-smoke">Open source.</span>
             </h2>
             <p className="font-sans text-base text-smoke leading-relaxed mb-4">
               Addie is free to download and use. The full source code is on GitHub — read it, fork it, contribute to it.
             </p>
             <p className="font-sans text-base text-smoke leading-relaxed">
-              If Addie makes your sessions better and you want to keep development going, you can support the project through GitHub Sponsors. One-time or monthly, whatever feels right. Completely optional.
+              If Addie makes your sessions better, consider supporting development through GitHub Sponsors. It keeps the project alive and growing. Every contribution is genuinely appreciated.
             </p>
           </div>
 
