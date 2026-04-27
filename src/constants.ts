@@ -1,15 +1,9 @@
 export const LINKS = {
-  FREE_TRIAL: 'https://addie.lemonsqueezy.com/checkout/free-trial', // replace with real URL
-  BUY: 'https://addie.lemonsqueezy.com/checkout/buy/addie-v1',      // replace with real URL
-  GITHUB: 'https://github.com/yourusername/addie',
-}
-
-export const PRICING = {
-  amount: 20,
-  currency: 'USD',
-  model: 'one-time',
-  trial_uses: 10,
-  version: '1.0',
+  DOWNLOAD_MAC: 'https://github.com/amadeodlp/addie/releases/latest/download/Addie.dmg',
+  DOWNLOAD_WIN: 'https://github.com/amadeodlp/addie/releases/latest/download/Addie.Setup.exe',
+  GITHUB:       'https://github.com/amadeodlp/addie',
+  SPONSORS:     'https://github.com/sponsors/amadeodlp',
+  RELEASES:     'https://github.com/amadeodlp/addie/releases/latest',
 }
 
 export const FEATURES = [
@@ -22,7 +16,7 @@ export const FEATURES = [
   {
     id: 'device-params',
     title: 'Deep device access',
-    description: 'Full control over all native Ableton devices. Third-party plugins work when exposed via Configure mode — most effects yes, most instruments no.',
+    description: 'Full control over all native Ableton devices — EQ Eight, compressors, reverbs, delays, limiters, Wavetable, Drift, and more.',
     tag: 'Deep integration',
   },
   {
@@ -46,7 +40,7 @@ export const FEATURES = [
   {
     id: 'local-first',
     title: 'Your LLM, your rules',
-    description: 'You bring your own API key — OpenAI, Anthropic, DeepSeek, or a local model. Addie never sees your data. What goes to the LLM is your choice, not ours.',
+    description: 'You bring your own API key — OpenAI, Anthropic, DeepSeek, or a local model via Ollama. Addie never sees your data. What goes to the LLM is your choice, not ours.',
     tag: 'BYOK',
   },
 ]
@@ -55,39 +49,39 @@ export const HOW_IT_WORKS = [
   {
     step: '01',
     title: 'Download & install',
-    description: 'Download the Addie app for Mac or Windows and run it. Then Addie copies its control surface into Ableton\'s MIDI Remote Scripts folder automatically. One click in Preferences to enable. Done in 2 minutes.',
+    description: 'Download the Addie app for Mac or Windows and run it. Addie copies its control surface into Ableton\'s MIDI Remote Scripts folder automatically. One click in Preferences to enable. Done in 2 minutes.',
   },
   {
     step: '02',
-    title: 'Open your session',
-    description: 'Addie reads your full session — tracks, devices, parameters, clip layout — and holds it all in context.',
+    title: 'Paste your API key',
+    description: 'Grab a key from OpenAI, Anthropic, DeepSeek, or any compatible provider — or point it at a local Ollama model for zero cost. Addie never stores or transmits your key.',
   },
   {
     step: '03',
-    title: 'Talk to it',
-    description: 'Type what you hear. "The bass is fighting the kick." "Add a limiter to the master." "Write a 4-bar drum loop with swing."',
+    title: 'Open your session',
+    description: 'Addie reads your full session — tracks, devices, parameters, clip layout — and holds it all in context before you type a word.',
   },
   {
     step: '04',
-    title: 'Review & confirm',
-    description: 'Addie shows you exactly what it\'s going to do. You say yes. It executes. You keep making music.',
+    title: 'Talk to it',
+    description: 'Type what you hear. "The bass is fighting the kick." "Add a limiter to the master." "Write a 4-bar drum loop with swing." Addie shows you what it\'s going to do, you confirm, it executes.',
   },
 ]
 
 export const TESTIMONIALS = [
   {
     quote: "I've been making music for 15 years. This doesn't replace what I do — it removes the stupid friction that slows me down.",
-    author: 'Beta tester, electronic producer',
+    author: 'Electronic producer',
     detail: 'Berlin',
   },
   {
     quote: "Asked it to fix the low-end clash between kick and bass. It found the frequency overlap and fixed it. I'd been trying to sort that by ear for an hour.",
-    author: 'Beta tester, self-producing musician',
+    author: 'Self-producing musician',
     detail: 'Los Angeles',
   },
   {
     quote: "I make music. I don't want to learn mixing. Addie handles the stuff I'd otherwise spend hours googling.",
-    author: 'Beta tester, singer-songwriter',
+    author: 'Singer-songwriter',
     detail: 'Buenos Aires',
   },
 ]

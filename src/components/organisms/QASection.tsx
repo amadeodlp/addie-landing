@@ -9,14 +9,14 @@ interface QAItem {
 const QA_ITEMS: QAItem[] = [
   {
     q: 'What is Addie?',
-    a: 'Addie is a desktop app for Mac and Windows that connects to Ableton Live. You talk to it in plain language — it reads your session, diagnoses problems, and makes changes directly in your DAW. No clicking through menus. No hunting for parameters.',
+    a: 'Addie is a free, open source desktop app for Mac and Windows that connects to Ableton Live. You talk to it in plain language — it reads your session, diagnoses problems, and makes changes directly in your DAW. No clicking through menus. No hunting for parameters.',
   },
   {
     q: 'What can Addie do?',
     a: [
       'Read your full session — every track, device, and parameter',
       'Diagnose mix problems: frequency masking, gain staging, routing issues',
-      'Control any native Ableton device — EQ, compressors, reverbs, delays, limiters',
+      'Control any native Ableton device — EQ, compressors, reverbs, delays, limiters, Wavetable, Drift',
       'Build signal chains from scratch: parallel compression, sidechain, vocal bus, master chain',
       'Set up routing: buses, return tracks, sends',
       'Write MIDI clips — drum patterns, melodies, straight into your session',
@@ -27,8 +27,7 @@ const QA_ITEMS: QAItem[] = [
   {
     q: "What can't Addie do?",
     a: [
-      'Control third-party synthesizers like Diva or Trilian — most instruments don\'t expose their parameters to Ableton',
-      'Control third-party EQs or effects unless you\'ve set them up in Configure mode first',
+      'Control third-party plugins (VSTs, AUs) out of the box — they need to be set up in Ableton\'s Configure mode first so their parameters are exposed',
       'Play or stop your session, fire clips, or arm tracks — those stay manual',
       'Make creative decisions for you — it works with what you give it',
     ],
@@ -39,21 +38,20 @@ const QA_ITEMS: QAItem[] = [
     a: 'Musicians who self-produce and want to focus on making music, not on engineering. You know what you want it to sound like. Addie handles the technical path to get there.',
   },
   {
-    q: 'Who is Addie not for?',
-    a: 'Mixing and mastering engineers with deep technical workflows. Addie is not a professional mixing console — it\'s a creative assistant. It also won\'t help if Ableton isn\'t your DAW.',
+    q: 'Is it really free?',
+    a: 'Yes — free to download, free to use, open source. No trial, no paywall, no account. If it makes your sessions better and you want to support development, there\'s a GitHub Sponsors link. But you never have to.',
   },
   {
     q: 'What do I need to use it?',
     a: [
       'Ableton Live 11 or 12 (Standard or Suite)',
       'An API key from an LLM provider — OpenAI, Anthropic, DeepSeek, or any compatible one',
-      'Or run a local model with Ollama for zero cost',
-      'That\'s it. No Addie account. No subscription. Addie doesn\'t sit between you and your LLM',
+      'Or run a local model with Ollama for zero cost — nothing leaves your machine',
     ],
   },
   {
-    q: 'Is it free?',
-    a: '10 uses free, no credit card. After that, $20 one-time. All v1.x updates included.',
+    q: 'Does my session data leave my machine?',
+    a: 'Your session context is sent to whichever LLM provider you configure — that\'s how it works. Addie itself is local and has no server. If you use a local model like Ollama, nothing leaves your machine at all.',
   },
 ]
 

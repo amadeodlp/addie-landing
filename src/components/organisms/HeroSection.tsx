@@ -2,10 +2,9 @@ import { LogoMark } from '@/components/atoms/Logo'
 import { Button } from '@/components/atoms/Button'
 import { MonoLabel, AccentDot } from '@/components/atoms/Typography'
 import { ChatDemo } from '@/components/molecules/ChatDemo'
-import { LINKS, PRICING } from '@/constants'
+import { LINKS } from '@/constants'
 
 export const HeroSection = () => {
-
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden grid-bg pt-16">
       {/* Decorative giant A */}
@@ -29,7 +28,7 @@ export const HeroSection = () => {
             {/* Badge */}
             <div className="flex items-center gap-3 animate-fade-up">
               <LogoMark size={32} />
-              <MonoLabel color="signal">v{PRICING.version} — now available</MonoLabel>
+              <MonoLabel color="signal">Free & open source</MonoLabel>
             </div>
 
             {/* Headline */}
@@ -44,22 +43,22 @@ export const HeroSection = () => {
 
             {/* Sub */}
             <p className="font-sans text-lg sm:text-xl text-smoke leading-relaxed max-w-lg animate-fade-up animate-delay-200">
-              Meet Addie — the Ableton AI assistant for musicians that know their craft.
+              AI co-producer for Ableton Live. Reads your session, diagnoses your mix, controls your DAW — in plain language.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 animate-fade-up animate-delay-300">
-              <Button href={LINKS.FREE_TRIAL} variant="signal" size="lg">
-                Start free — {PRICING.trial_uses} uses
+              <Button href={LINKS.DOWNLOAD_MAC} variant="signal" size="lg">
+                Download for Mac
               </Button>
-              <Button href={LINKS.BUY} variant="ghost" size="lg">
-                ${PRICING.amount} one time
+              <Button href={LINKS.DOWNLOAD_WIN} variant="ghost" size="lg">
+                Download for Windows
               </Button>
             </div>
 
             {/* Trust line */}
             <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-ghost animate-fade-up animate-delay-400">
-              No subscription · BYOK · Ableton Live 11+
+              Free · Open source · No account · Ableton Live 11+
             </p>
           </div>
 

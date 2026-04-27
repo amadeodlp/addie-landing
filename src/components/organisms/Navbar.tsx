@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { LogoWordmark } from '@/components/atoms/Logo'
 import { Button } from '@/components/atoms/Button'
-import { LINKS, PRICING } from '@/constants'
+import { LINKS } from '@/constants'
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -29,14 +29,17 @@ export const Navbar = () => {
           <a href="#how-it-works" className="font-mono text-[11px] tracking-widest uppercase text-smoke hover:text-paper transition-colors">
             How it works
           </a>
-          <a href="#pricing" className="font-mono text-[11px] tracking-widest uppercase text-smoke hover:text-paper transition-colors">
-            Pricing
+          <a href="#support" className="font-mono text-[11px] tracking-widest uppercase text-smoke hover:text-paper transition-colors">
+            Open source
+          </a>
+          <a href={LINKS.GITHUB} className="font-mono text-[11px] tracking-widest uppercase text-smoke hover:text-paper transition-colors">
+            GitHub
           </a>
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button href={LINKS.FREE_TRIAL} variant="signal" size="sm">
-            Try free
+          <Button href={LINKS.RELEASES} variant="signal" size="sm">
+            Download
           </Button>
         </div>
       </div>

@@ -121,7 +121,7 @@ interface DiagramLayerProps {
   isBottom?: boolean
 }
 
-const DiagramLayer = ({ label, detail, color, isBottom = false }: DiagramLayerProps) => {
+const DiagramLayer = ({ label, detail, color, isBottom: _isBottom = false }: DiagramLayerProps) => {
   const borderColor = {
     signal: 'border-signal/50 bg-signal/5',
     paper: 'border-ash bg-dim',

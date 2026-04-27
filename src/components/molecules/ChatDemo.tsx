@@ -4,33 +4,42 @@ import { AccentDot } from '@/components/atoms/Typography'
 interface Message {
   role: 'user' | 'addie'
   text: string
-  action?: string
+  result?: string
 }
 
 const DEMO_MESSAGES: Message[] = [
-  { role: 'user', text: 'The kick and bass are fighting each other in the low end.' },
   {
-    role: 'addie',
-    text: "I can see the issue. Your Kick track has a boost at 80 Hz, and the Bass has a boost at 100 Hz — they're overlapping. I'll high-pass the Bass above 90 Hz and carve 3 dB at 80 Hz on the Kick's EQ.",
-    action: 'param_set | Bass | 0 | HP Freq | 90 Hz\nparam_set | Kick | 0 | 80 Hz | -3.0 dB',
+    role: 'user',
+    text: 'The kick and bass are fighting each other in the low end.',
   },
-  { role: 'user', text: 'Add a limiter to the master and set ceiling to -0.3 dBTP.' },
   {
     role: 'addie',
-    text: "Adding Limiter to Master. Setting ceiling to -0.3 dBTP.",
-    action: 'browser_insert | Master | Limiter\nparam_set | Master | 0 | Ceiling | -0.3',
+    text: "There's overlap around 80–100 Hz. I'll high-pass the Bass above 90 Hz and cut 3 dB at 80 Hz on the Kick — that should clean up the clash without losing weight on either.",
+    result: '✓ EQ adjusted on Kick and Bass',
   },
-  { role: 'user', text: 'Write a 4-bar trap drum pattern at 140 BPM with ghost notes.' },
+  {
+    role: 'user',
+    text: 'Add a limiter to the master and set ceiling to -0.3 dBTP.',
+  },
   {
     role: 'addie',
-    text: "Creating a 4-bar MIDI clip on your Drum Rack track with a punchy trap pattern — kick on 1 and 3, snare on 2 and 4, 16th-note hi-hats with ghost note velocity variation.",
-    action: 'set_clip_notes | Drums | 0 | [...MIDI data]',
+    text: "Adding a Limiter to the Master chain and setting the ceiling to -0.3 dBTP.",
+    result: '✓ Limiter added to Master',
+  },
+  {
+    role: 'user',
+    text: 'Write a 4-bar trap drum pattern at 140 BPM with ghost notes.',
+  },
+  {
+    role: 'addie',
+    text: "Creating a 4-bar clip on your Drum Rack — kick on 1 and 3, snare on 2 and 4, 16th-note hi-hats with ghost note velocity variation for that trap feel.",
+    result: '✓ MIDI clip written to session',
   },
 ]
 
 export const ChatDemo = () => {
   const [visibleCount, setVisibleCount] = useState(0)
-  const [showAction, setShowAction] = useState<number | null>(null)
+  const [showResult, setShowResult] = useState<number | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -40,8 +49,8 @@ export const ChatDemo = () => {
 
     const t = setTimeout(() => {
       setVisibleCount((c) => c + 1)
-      if (msg.role === 'addie' && msg.action) {
-        setTimeout(() => setShowAction(visibleCount), 400)
+      if (msg.role === 'addie' && msg.result) {
+        setTimeout(() => setShowResult(visibleCount), 500)
       }
     }, delay)
 
@@ -50,7 +59,7 @@ export const ChatDemo = () => {
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
-  }, [visibleCount, showAction])
+  }, [visibleCount, showResult])
 
   return (
     <div className="border border-ash bg-void overflow-hidden">
@@ -74,12 +83,10 @@ export const ChatDemo = () => {
       >
         {DEMO_MESSAGES.slice(0, visibleCount).map((msg, i) => (
           <div key={i} className="flex flex-col gap-1.5 animate-fade-up">
-            {/* Role label */}
             <span className="font-mono text-[9px] tracking-widest uppercase text-ghost">
               {msg.role === 'user' ? 'you' : 'addie'}
             </span>
 
-            {/* Bubble */}
             <div
               className={[
                 'text-sm leading-relaxed px-4 py-3 max-w-[85%]',
@@ -91,15 +98,13 @@ export const ChatDemo = () => {
               {msg.text}
             </div>
 
-            {/* Action block */}
-            {msg.action && showAction === i && (
-              <div className="self-start mt-1 border border-signal/30 bg-signal/5 px-3 py-2 max-w-full">
-                <p className="font-mono text-[9px] tracking-wider uppercase text-signal mb-1">
-                  actions queued — confirm?
-                </p>
-                <pre className="font-mono text-[10px] text-ghost whitespace-pre-wrap leading-relaxed">
-                  {msg.action}
-                </pre>
+            {/* Result confirmation — clean, no internal commands */}
+            {msg.result && showResult === i && (
+              <div className="self-start mt-0.5 flex items-center gap-2 px-3 py-1.5 border border-signal/30 bg-signal/5">
+                <span className="w-1.5 h-1.5 rounded-full bg-signal flex-shrink-0" />
+                <span className="font-mono text-[10px] tracking-wider text-signal">
+                  {msg.result}
+                </span>
               </div>
             )}
           </div>

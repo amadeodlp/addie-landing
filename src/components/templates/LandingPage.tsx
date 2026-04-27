@@ -15,7 +15,7 @@ import { Footer } from '@/components/organisms/Footer'
  * 3. AntiAI      — Philosophy: we're not that kind of AI
  * 4. HowItWorks  — It's simple, 2 mins to install
  * 5. Testimonials — Social proof
- * 6. Pricing     — Decide: $49 one-time, try 10 uses free
+ * 6. Support      — Open source, free, optional sponsorship
  * 7. FinalCTA    — Last push
  */
 export const LandingPage = () => {

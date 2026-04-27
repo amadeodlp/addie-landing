@@ -2,14 +2,13 @@ import { useInView } from '@/components/atoms/useInView'
 import { Button } from '@/components/atoms/Button'
 import { MonoLabel, AccentDot } from '@/components/atoms/Typography'
 import { LogoMark } from '@/components/atoms/Logo'
-import { LINKS, PRICING } from '@/constants'
+import { LINKS } from '@/constants'
 
 export const FinalCTASection = () => {
   const [ref, inView] = useInView<HTMLDivElement>({ threshold: 0.2 })
 
   return (
     <section className="border-t border-ash relative overflow-hidden">
-      {/* BG decorative A */}
       <div
         aria-hidden
         className="absolute right-0 bottom-0 font-sans font-extrabold text-[50vw] leading-none text-paper opacity-[0.02] pointer-events-none select-none translate-y-1/4"
@@ -38,18 +37,20 @@ export const FinalCTASection = () => {
           </p>
 
           <p className="font-sans text-lg text-smoke leading-relaxed mb-10 max-w-lg">
-            Start with {PRICING.trial_uses} free uses — no credit card, no account. If Addie
-            makes your sessions better, buy it once for ${PRICING.amount}.
+            Free to download. Free to use. Just install it and open your session.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button href={LINKS.FREE_TRIAL} variant="signal" size="xl">
-              Start free trial
+            <Button href={LINKS.DOWNLOAD_MAC} variant="signal" size="xl">
+              Download for Mac
+            </Button>
+            <Button href={LINKS.DOWNLOAD_WIN} variant="ghost" size="xl">
+              Download for Windows
             </Button>
           </div>
 
           <MonoLabel color="ghost">
-            No subscription · No Addie account · Bring your own API key · Ableton Live 11+
+            Free · Open source · No account · Bring your own API key · Ableton Live 11+
           </MonoLabel>
         </div>
       </div>
