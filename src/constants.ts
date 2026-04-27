@@ -1,6 +1,6 @@
 export const LINKS = {
-  DOWNLOAD_MAC: 'https://github.com/amadeodlp/addie/releases/download/v0.1.4/Addie.dmg',
-  DOWNLOAD_WIN: 'https://github.com/amadeodlp/addie/releases/download/v0.1.4/Addie.Setup.exe',
+  DOWNLOAD_MAC: 'https://github.com/amadeodlp/addie/releases/latest/download/Addie.dmg',
+  DOWNLOAD_WIN: 'https://github.com/amadeodlp/addie/releases/latest/download/Addie.Setup.exe',
   DOWNLOAD_PAGE: '/download',
   GITHUB:        'https://github.com/amadeodlp/addie',
   SPONSORS:      'https://github.com/sponsors/amadeodlp',
