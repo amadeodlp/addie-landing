@@ -48,11 +48,11 @@ export const HeroSection = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 animate-fade-up animate-delay-300">
-              <Button href={LINKS.DOWNLOAD_MAC} variant="signal" size="lg">
-                Download for Mac
+              <Button href={LINKS.DOWNLOAD_PAGE} variant="signal" size="lg">
+                Download Addie
               </Button>
-              <Button href={LINKS.DOWNLOAD_WIN} variant="ghost" size="lg">
-                Download for Windows
+              <Button href={LINKS.GITHUB} variant="ghost" size="lg">
+                View source ↗
               </Button>
             </div>
 

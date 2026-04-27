@@ -41,11 +41,11 @@ export const FinalCTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button href={LINKS.DOWNLOAD_MAC} variant="signal" size="xl">
-              Download for Mac
+            <Button href={LINKS.DOWNLOAD_PAGE} variant="signal" size="xl">
+              Download Addie
             </Button>
-            <Button href={LINKS.DOWNLOAD_WIN} variant="ghost" size="xl">
-              Download for Windows
+            <Button href={LINKS.GITHUB} variant="ghost" size="xl">
+              View source ↗
             </Button>
           </div>
 

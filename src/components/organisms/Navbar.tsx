@@ -38,7 +38,7 @@ export const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button href={LINKS.RELEASES} variant="signal" size="sm">
+          <Button href={LINKS.DOWNLOAD_PAGE} variant="signal" size="sm">
             Download
           </Button>
         </div>
