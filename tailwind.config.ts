@@ -5,14 +5,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        void: '#0a0a0a',
-        paper: '#f5f0e8',
-        cream: '#ede8dd',
+        void:   '#111110',
+        paper:  '#f5f0e8',
+        cream:  '#ede8dd',
         signal: '#c8ff00',
-        smoke: '#5a5850',
-        ash: '#2a2a25',
-        dim: '#1a1a15',
-        ghost: '#3a3a32',
+        smoke:  '#7a7870',
+        ash:    '#38382f',
+        dim:    '#1e1e18',
+        ghost:  '#525248',
       },
       fontFamily: {
         sans: ['Bricolage Grotesque', 'Arial Black', 'sans-serif'],
