@@ -45,13 +45,13 @@ const QA_ITEMS: QAItem[] = [
     q: 'What do I need to use it?',
     a: [
       'Ableton Live 11 or 12 (Standard or Suite)',
-      'An API key from an LLM provider — OpenAI, Anthropic, DeepSeek, or any compatible one',
-      'Or run a local model with Ollama for zero cost — nothing leaves your machine',
+      'An API key from OpenAI, Anthropic, DeepSeek, Gemini, or any compatible provider — Claude Haiku, GPT-4o mini, and DeepSeek are a solid starting point',
+      'More complex sessions benefit from a more capable model — Addie works with whatever you choose',
     ],
   },
   {
     q: 'Does my session data leave my machine?',
-    a: 'Your session context is sent to whichever LLM provider you configure — that\'s how it works. Addie itself is local and has no server. If you use a local model like Ollama, nothing leaves your machine at all.',
+    a: 'Your session context is sent to whichever LLM provider you configure — that\'s how it works. Addie itself is local and has no server.',
   },
 ]
 

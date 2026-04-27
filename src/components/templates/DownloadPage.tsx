@@ -118,8 +118,8 @@ export const DownloadPage = () => {
             <ul className="flex flex-col gap-2.5">
               {[
                 'Ableton Live 11 or 12 — Standard or Suite',
-                'An API key from OpenAI, Anthropic, DeepSeek, or any compatible LLM provider',
-                'Or a local model via Ollama — free, nothing leaves your machine',
+                'An API key from OpenAI, Anthropic, DeepSeek, Gemini, or any compatible provider',
+                'Claude Haiku, GPT-4o mini, and DeepSeek are a good starting point — go bigger for more complex sessions',
               ].map((req, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="mt-[6px] w-1 h-1 rounded-full bg-signal flex-shrink-0" />

@@ -1,6 +1,6 @@
 export const LINKS = {
-  DOWNLOAD_MAC: 'https://github.com/amadeodlp/addie/releases/latest/download/Addie.dmg',
-  DOWNLOAD_WIN: 'https://github.com/amadeodlp/addie/releases/latest/download/Addie.Setup.exe',
+  DOWNLOAD_MAC: 'https://github.com/amadeodlp/addie/releases/download/v0.1.4/Addie.dmg',
+  DOWNLOAD_WIN: 'https://github.com/amadeodlp/addie/releases/download/v0.1.4/Addie.Setup.exe',
   DOWNLOAD_PAGE: '/download',
   GITHUB:        'https://github.com/amadeodlp/addie',
   SPONSORS:      'https://github.com/sponsors/amadeodlp',
@@ -41,7 +41,7 @@ export const FEATURES = [
   {
     id: 'local-first',
     title: 'Your LLM, your rules',
-    description: 'You bring your own API key — OpenAI, Anthropic, DeepSeek, or a local model via Ollama. Addie never sees your data. What goes to the LLM is your choice, not ours.',
+    description: 'You bring your own API key. Tested with Claude Haiku, GPT-4o mini, and DeepSeek — anything in that tier or above works well. Addie never sees your data.',
     tag: 'BYOK',
   },
 ]
@@ -55,7 +55,7 @@ export const HOW_IT_WORKS = [
   {
     step: '02',
     title: 'Paste your API key',
-    description: 'Grab a key from OpenAI, Anthropic, DeepSeek, or any compatible provider — or point it at a local Ollama model for zero cost. Addie never stores or transmits your key.',
+    description: 'Grab an API key from OpenAI, Anthropic, DeepSeek, Gemini, or any compatible provider. Claude Haiku, GPT-4o mini, and DeepSeek are a good starting point — go bigger for more complex sessions. Addie never stores your key.',
   },
   {
     step: '03',
