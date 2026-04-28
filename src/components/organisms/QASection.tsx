@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useInView } from '@/components/atoms/useInView'
 
 interface QAItem {
@@ -59,13 +60,65 @@ export const QASection = () => {
   return (
     <section id="what-is-addie" className="border-t border-ash">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
-        <div className="max-w-3xl flex flex-col">
-          {QA_ITEMS.map((item, i) => (
-            <QABlock key={i} item={item} index={i} />
-          ))}
+        <div className="flex flex-col">
+          <div className="max-w-3xl flex flex-col">
+            <QABlock item={QA_ITEMS[0]} index={0} />
+          </div>
+
+          <div className="mt-12 w-full">
+            <DemoVideo />
+          </div>
+
+          <div className="max-w-3xl flex flex-col">
+            {QA_ITEMS.slice(1).map((item, i) => (
+              <QABlock key={i + 1} item={item} index={i + 1} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
+  )
+}
+
+const DemoVideo = () => {
+  const ref = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = ref.current
+    if (!video) return
+
+    const onLoadedMetadata = () => {
+      try {
+        if (Number.isFinite(video.duration) && video.duration > 5) {
+          video.currentTime = 5
+        }
+        // If autoplay is blocked, this will harmlessly reject.
+        void video.play().catch(() => {})
+      } catch {
+        // no-op
+      }
+    }
+
+    video.addEventListener('loadedmetadata', onLoadedMetadata)
+    return () => video.removeEventListener('loadedmetadata', onLoadedMetadata)
+  }, [])
+
+  return (
+    <div className="border border-ash bg-void overflow-hidden w-full">
+      <video
+        ref={ref}
+        className="w-full h-auto"
+        autoPlay
+        controls
+        loop
+        muted
+        playsInline
+        preload="metadata"
+      >
+        <source src="/addie-demo.mp4#t=5" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
   )
 }
 
